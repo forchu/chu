@@ -1,0 +1,92 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>我要吃月饼</title>
+    <script src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
+    <script type="text/javascript">
+        $(function ($) {
+            i=1;
+            setInterval("show()",1000);
+        });
+        function show(){
+            //当前字变红、变大50px
+            font="#font"+i;
+            $(font).css("font-size","80px");
+            $(font).css("color","red");
+            //上一个恢复绿色、30px
+            if(i!=1)
+                font="#font"+(i-1);
+            else
+                font="#font7";
+            $(font).css("font-size","25px");
+            $(font).css("color","green");
+            pression();
+            reset();
+        }
+        function reset(){
+
+            if(i==7){
+                i=1;
+            }else{
+                i++;
+            }
+        }
+        //"我要吃月饼"设置，最后一个字出现时显示，其他时候隐藏
+        function pression(){
+            if(i==7 || i==5 || i==6){
+                $("#foot").show();
+            }else{
+                $("#foot").hide();
+            }
+
+        }
+
+    </script>
+    <style type="text/css">
+        body{
+            margin:0px 0px;
+            padding:0px 0px;
+            background-color:#FAFFE8;#FFF7C8;;#FAFFE8;
+
+        }
+        #body{
+            margin:85px 25px;
+            padding:10px 10px;
+            align:center;
+            background-color:#FFF7C8;
+
+            height:380px;
+        }
+        #con{
+            margin:0px 600px;
+        }
+        #con font{
+            font-size:25px;
+            color:green;
+            align:center;
+        }
+        #foot{
+            margin:10px 350px;
+            display:none;
+        }
+
+    </style>
+</head>
+<body>
+<div id="body">
+    <div id="con">
+        <font id="font1">中</font><br/>
+        <font id="font2">秋</font><br/>
+        <font id="font3">节</font><br/>
+        <font id="font4">快</font><br/>
+        <font id="font5">乐</font><br/>
+        <font id="font6">乐</font><br/>
+        <font id="font7">乐</font>
+    </div>
+    <div id="foot"><font color="blue" size="100px" >我要吃月饼  o(*￣▽￣*)ブ</font></div>
+</div>
+</body>
+</html>

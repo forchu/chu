@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>简易计算器</title>
+    <script type="text/javascript">
+       // 获取元素的值  赋值：document.getElementById(“id”）.value = 1； 取值：var = document.getElementById(“id”）.value；
+      // 第一步 创建构建运算函数count()   第二步 获取两个输入框中的值和获取选择框的值
+        function count(){
+            var a = parseInt(document.getElementById("tex1").value);
+            var b = parseInt(document.getElementById("tex2").value);
+            var selectSign = document.getElementById("select").value;
+
+            // 第三步： 获取通过下拉框来选择的值来改变加减乘除的运算法则。 使用switch判断运算法则。
+            switch (selectSign)
+            {
+                case '+': answer = a+b;break;
+                case '-': answer = a-b;break;
+                case '*': answer = a*b;break;
+                case '/': answer = a/b;
+            }
+
+            document.getElementById("fruit").value = answer;
+        }
+       //第四步：  通过 = 按钮来调用创建的函数，得到结果。
+      // 注意: 使用parseInt()函数可解析一个字符串,并返回一个整数。
+    </script>
+
+</head>
+<body>
+<form name="form2" action="" method="get">
+<h2>简易计算器</h2>
+<input type="text" id="tex1" required="required" placeholder="请输入数字"
+       onfocus="focusInput(this)" onblur="blurInput(this)" />
+    <script>
+        // 输入框获得焦点， 设置边框颜色为红色
+        function focusInput( obj ){
+            obj.style.border = "1px solid red"; // 设置边框颜色为红色
+        }
+        // 输入框失去， 设置边框颜色为灰色
+        function blurInput( obj ){
+            obj.style.border = "1px solid gray"; // 设置边框颜色为灰色
+        }
+    </script>
+<select id="select">
+    <option value="">运算符</option>
+    <option value="+">加</option>
+    <option value="-">减</option>
+    <option value="*">乘</option>
+    <option value="/">除</option>
+</select>
+<input type="text" id="tex2" placeholder="请输入数字" required="required"/>
+<input type="button" value=" = " onclick="count()" />
+<input type="text" id="fruit" onclick="count()" placeholder="计算结果"/>
+    </form>
+</body>
+</html>
+
+
+<!--提示：document.getElementById( id名 ).value 获取或设置 id名的值。
+
+-->

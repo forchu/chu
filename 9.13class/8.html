@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h2 style="color: red">遍历 select</h2>
+友情链接： <select id="friendLink" name="friendLink">
+    <option value="">--请选择--</option>
+    <option value="http://baidu.com">--百度--</option>
+    <option value="http://goodjosb.com" selected>--新安人才网--</option>
+    <option value="http://365jia.cn.com">--万家热线--</option>
+</select>
+<button type="button" onclick="getFriendLinks()">获取友情链接下拉菜单</button>
+<h2>友情链接内容</h2>
+<div id="result"></div>
+<script type="text/javascript">
+    function getFriendLinks(){
+        var friendLink = document.getElementById('friendLink');
+        var html = "" ;
+        for( var i = 0; i < friendLink.length; i ++ ){
+            if( friendLink.options[i].value == "" ){
+                continue;
+            }
+            html += "下拉选项 - value " + friendLink.options[i].value ;
+            html += " 显示内容 " + friendLink.options[i].text ;
+            html += " 是否选中 ";
+            if(friendLink.options[i].selected ) {
+                html += " <font color='red'>选择</font> ";
+            } else {
+                html += " <font color='green'>未选中</font>";
+            }
+            html += "<br>";
+        }
+
+        document.getElementById('result').innerHTML = html;
+    }
+</script>
+
+</body>
+</html>

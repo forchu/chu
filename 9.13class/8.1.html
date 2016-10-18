@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h2 style="color: red">遍历 radiobox</h2>
+<label><input type="radio" name="sex" value="male">男</label>
+<label><input type="radio" name="sex" value="female">女</label>
+<label><input type="radio" name="sex" value="secret">保密</label>
+<button type="button" onclick="getSex()">遍历radiobox, 获取性别</button>
+<div id="result"></div>
+<script>
+    function getSex(){
+        var sex = document.getElementsByName("sex");
+        var html = "";
+        for ( var i = 0; i < sex.length ; i ++ ){
+            html +=  sex[i].value  ;
+            if( sex[i].checked ){
+                html += " 选中";
+            } else {
+                html += " 未选中";
+            }
+            html += "<br>";
+        }
+        document.getElementById("result").innerHTML = html;
+    }
+
+</script>
+
+<button type="button" onclick="checkedFemal()">选中女</button>
+<script>
+    function checkedFemal(){
+//document.getElementById('radio_female').checked = true;
+        var sex = document.getElementsByName("sex");
+        for ( var i = 0; i < sex.length ; i ++ ){
+            if( sex[i].value == "female"){
+                sex[i].checked = true;
+                break;
+            }
+        }
+
+    }
+</script>
+</body>
+</html>

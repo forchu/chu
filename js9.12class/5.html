@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h1>通过getElementById获取表单元素的值</h1>
+<form name="form1" action="" method="post">
+    用户名：<input type="text" value="aaa" id="user_name" name="user_name"><br>
+    Email：<input type="text" value="aa@126.com" id="email" name="email">
+    手机：<input type="text" value="13866666666" id="mobile"  name="mobile">
+</form>
+<script>
+    var user_name = document.getElementById("user_name").value;
+    var email = document.getElementById("email").value;
+    var mobile = document.getElementById("mobile").value;
+    document.write("<hr>");
+    document.write("用户名：" + user_name);
+    document.write("<br>");
+    document.write("Email：" +email);
+    document.write("<br>");
+    document.write("手机：" +mobile);
+</script>
+<hr>
+
+<h1>通过getElementById获取表单元素的值</h1>
+<form name="form1" action="" method="post">
+    用户名：<input type="text" value="aaa" id="user_name" name="user_name"><br>
+    Email：<input type="text" value="aa@126.com" id="email" name="email">
+    手机：<input type="text" value="13866666666" id="mobile"  name="mobile">
+</form>
+<script>
+    var user_name = document.getElementById("user_name").value;
+    var email = document.getElementById("email").value;
+    var mobile = document.getElementById("mobile").value;
+    document.write("<hr>");
+    document.write("用户名：" + user_name);
+    document.write("<br>");
+    document.write("Email：" +email);
+    document.write("<br>");
+    document.write("手机：" +mobile);
+    // 设置输入框的值
+    document.getElementById("user_name").value = "bbb";
+    document.getElementById("email").value = "bb@126.com";
+    document.getElementById("mobile").value = "1388888888";
+</script>
+
+</body>
+</html>

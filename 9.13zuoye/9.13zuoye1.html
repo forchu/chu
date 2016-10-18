@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h2 style="color: red">遍历 checkbox</h2>
+<!--思路：1、获取元素。2、用for循环历遍数组，把checkbox的check设置为true即实现全选，
+把checkbox的check设置为false即实现不选。
+3、通过if判断，如果check为true选中状态的，就把check设为false不选状态，
+如果check为false不选状态的，就把check设为true选中状态。-->
+<label><input type="checkbox" name="interesting[]" value="movie">看电影</label>
+<label><input type="checkbox" name="interesting[]" value="ball">打球</label>
+<label><input type="checkbox" name="interesting[]" value="swim">游泳</label>
+<label><input type="checkbox" name="interesting[]" value="music">听音乐</label>
+<button type="button" onclick="getInteresting()">遍历checkbox, 获取兴趣</button>
+<button type="button" onclick="checkAll()">全选</button>
+<button type="button" onclick="unCheck()">取消全选</button>
+<button type="button" onclick="otherCheck()">反选</button>
+<div id="result"></div>
+<script>
+    var interesting = document.getElementsByName("interesting[]");
+    function getInteresting(){
+        var html = "";
+        for ( var i = 0; i < interesting.length ; i ++ ) {
+            html += interesting[i].value;
+            if (interesting[i].checked) {html += "选中";}
+            else {html += "未选中";}
+            html += "<br>";}
+        document.getElementById("result").innerHTML = html;
+    }
+    //全选
+    function checkAll(){
+         for ( var i = 0; i < interesting.length ; i ++ ) {
+        interesting[i].checked = true;
+          }
+    }
+    //取消全选
+    function unCheck(){
+        for ( var i = 0; i < interesting.length ; i ++ ) {
+            interesting[i].checked = false;
+        }
+    }
+    //反选
+    function otherCheck(){
+        for ( var i = 0; i < interesting.length ; i ++ ) {
+           if ( interesting[i].checked == true){interesting[i].checked=false;}
+            else{interesting[i].checked=true}
+        }
+    }
+
+</script>
+</body>
+</html>

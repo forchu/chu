@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h2 style="color: red">遍历 checkbox</h2>
+
+<label><input type="checkbox" name="interesting[]" value="movie">看电影</label>
+<label><input type="checkbox" name="interesting[]" value="ball">打球</label>
+<label><input type="checkbox" name="interesting[]" value="swim">游泳</label>
+<label><input type="checkbox" name="interesting[]" value="music">听音乐</label>
+<button type="button" onclick="getInteresting()">遍历checkbox, 获取兴趣</button>
+<div id="result"></div>
+<script>
+    function getInteresting(){
+        var interesting = document.getElementsByName("interesting[]");
+        var html = "";
+        for ( var i = 0; i < interesting.length ; i ++ ) {
+            html += interesting[i].value;
+            if (interesting[i].checked) {
+                html += "选中";
+            } else {
+                html += "未选中";
+            }
+            html += "<br>";
+        }
+        document.getElementById("result").innerHTML = html;
+    }
+</script>
+
+</body>
+</html>

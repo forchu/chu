@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+友情链接: <select name="url" id="url">
+    <option value="">--请选择--</option>
+    <option value="http://baidu.com">--百度--</option>
+    <option value="http://goodjobs.com">--新安人才网--</option>
+    <option value="http://365jia.cn.com">--万家热线--</option>
+</select>
+<button type="button" onclick="goto()">跳转</button>
+<script>
+    function goto(){
+        var url = document.getElementById("url").value;
+        if( url == ""){
+            alert("请选择要进入的网址");
+            return false; // 中断程序
+        }
+        document.location.href = url;
+        alert("done");
+    }
+</script>
+
+<button type="button" id="btn">跳转</button>
+<script>
+    // 给跳转按钮绑定一个点击事件
+    document.getElementById('btn').onclick = goto;
+</script>
+</body>
+</html>

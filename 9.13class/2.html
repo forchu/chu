@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+  <!--获取标签中的HTML内容-->
+
+<h2 id="title">习近平：在世界经济共振中实现联动发展</h2>
+<div id="summary">
+    <strong  class="timeSummary">2016-09-12 13:58:00</strong>
+    <a href="http://china.huanqiu.com">学习中国</a>
+    </strong>
+</div>
+<div id="content">
+    <p style="font-size: 14px;">共同的事业，需要共同奋斗；步调一致，事半功倍。我们正处于一个“全球价值链时代”，各国发展环环相扣，联动发展是时代的必然选择。“联动”是习近平主席对世界经济增长方式的新认知，是东方大智慧。9月3日，习近平在二十国集团工商峰会开幕式上指出：“在经济全球化时代，各国发展环环相扣，一荣俱荣，一损俱损。没有哪一个国家可以独善其身，协调合作是必然选择。我们要在世界经济共振中实现联动发展。”请随“学习<a title="中国" target="_blank" class="linkAbout" href="http://country.huanqiu.com/china">中国</a>”小编一起学习。 </p>
+    <p align="center" style="font-size: 14px;"><img style="height: 470px; width: 615px" src="http://himg2.huanqiu.com/attachment2010/2016/0912/14/04/20160912020415389.jpg"></p>
+    <p style="font-size: 14px;">图为：2016年9月4日，国家主席习近平和夫人彭丽媛在杭州西子宾馆举行宴会，欢迎出席二十国集团领导人杭州峰会的外方代表团团长及所有嘉宾。这是习近平发表致辞，代表中国政府和中国人民热烈欢迎各位贵宾的到来。</p>
+</div>
+
+<script>
+    var summary_html = document.getElementById("summary").innerHTML;
+    var summary_text = document.getElementById("summary").innerText;
+    console.log(summary_html);
+    console.log(summary_text);
+
+
+    // 设置标签的html代码
+    // 设置summary标签
+    // 设置summary标签
+    document.getElementById("summary").innerHTML =  "<a href='http://goodjobs.cn'>新安人才网</a>";
+    // 设置content标签， 增加一段话
+    document.getElementById("content").innerHTML  +=  "<p>新安人才网</p>";
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+姓名：<input type="text" name="name" value="" onchange="check_change()"/>
+选择：<select onchange="check_change()">
+    <option>a</option>
+    <option>b</option>
+</select>
+<script type="text/javascript">
+    function check_change() {
+        alert('你确定要改变吗');
+    }
+</script>
+
+友情链接： <select onchange="goto(this)">
+    <option value="">--请选择--</option>
+    <option value="http://baidu.com">--百度--</option>
+    <option value="http://goodjosb.com">--新安人才网--</option>
+    <option value="http://365jia.cn.com">--万家热线--</option>
+</select>
+<script type="text/javascript">
+    function goto( obj ) {
+        var url = obj.value;
+        if (url == "") {
+            alert('请选择友情链接网址');
+            return false;
+        }
+        document.location.href = url;
+    }
+</script>
+
+<hr>
+
+<a href="javascript:;" onclick="deleteOrder(1)">删除</a>
+<script>
+    function deleteOrder( id ){
+        if (confirm('您确认要删除此订单吗')) { // 点击确定
+            // 跳转进入删除订单页面
+            document.location.href = "delte_order.php?order_id="+id;
+        } else { // 点击取消
+            return false;
+        }
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h2 style="color: red">遍历 checkbox</h2>
+
+<label><input type="checkbox" name="interesting[]" value="movie">看电影</label>
+<label><input type="checkbox" name="interesting[]" value="ball">打球</label>
+<label><input type="checkbox" name="interesting[]" value="swim">游泳</label>
+<label><input type="checkbox" name="interesting[]" value="music">听音乐</label>
+<button type="button" onclick="getInteresting()">遍历checkbox, 获取兴趣</button>
+<button type="button" onclick="checkAll()">全选</button>
+<button type="button" onclick="unCheck()">取消全选</button>
+<button type="button" onclick="otherCheck()">反选</button>
+<div id="result"></div>
+<script>
+    function getInteresting(){
+        var interesting = document.getElementsByName("interesting[]");
+        var html = "";
+        for ( var i = 0; i < interesting.length ; i ++ ) {
+            html += interesting[i].value;
+            if (interesting[i].checked) {html += "选中";}
+            else {html += "未选中";}
+            html += "<br>";}
+        document.getElementById("result").innerHTML = html;
+    }
+    //全选
+    function checkAll(){
+        var interesting = document.getElementsByName("interesting[]");
+         for ( var i = 0; i < interesting.length ; i ++ ) {
+        interesting[i].checked = true;
+          }
+    }
+    //取消全选
+    function unCheck(){
+        var interesting = document.getElementsByName("interesting[]");
+        for ( var i = 0; i < interesting.length ; i ++ ) {
+            interesting[i].checked = false;
+        }
+    }
+    //反选
+    function otherCheck(){
+        var interesting = document.getElementsByName("interesting[]");
+        for ( var i = 0; i < interesting.length ; i ++ ) {
+           if ( interesting[i].checked == true){interesting[i].checked=false;}
+            else{interesting[i].checked=true}
+        }
+    }
+
+</script>
+</body>
+</html>

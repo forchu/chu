@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>计算器</title>
+</head>
+<body>
+<!--<?php
+$num1 = $_GET["num1"];
+$num2 = $_GET["num2"];
+$sel = $_GET["sel"];
+if( $num1 != "" && $num2 != "" && $sel){
+
+    $result = 0;
+   if($sel=="+"){
+       $result = $num1 + $num2;
+   } elseif ( $sel=="-" ){
+       $result = $num1 - $num2;
+   }elseif ( $sel=="*" ){
+       $result = $num1 * $num2;
+   }elseif ( $sel=="/" ){
+       $result = $num1 / $num2;
+   } else {
+       $result = "错误！";
+   }
+}
+?>
+<h1>计算器</h1>
+<form action="" method="get">
+    <input type="text" name="num1" value="<?php echo $num1?>" placeholder="请输入数字" required="required">
+    <select name="sel" required="required">
+        <option value="" >--运算符--</option>
+        <option value="+" <?php if($sel=="+") echo "selected";?>>--加--</option>
+        <option value="-" <?php if($sel=="-") echo "selected";?>>--减--</option>
+        <option value="*" <?php if($sel=="*") echo "selected";?>>--乘--</option>
+        <option value="/" <?php if($sel=="/") echo "selected";?>>--除--</option>
+    </select>
+    <input type="text" name="num2" value="<?php echo $num2?>" placeholder="请输入数字" required="required">
+    <input type="submit" value="计算">
+    <input type="text" name="" value="<?php echo $result;?>" placeholder="计算结果">
+</form>-->
+<h1>简易计算器</h1>
+<form name="form2" action="" method="get">
+    <input type="text" name="num1" value="" placeholder="请输入数字" required="required" >
+    <select name="sel" required="required">
+        <option value="">--运算符--</option>
+        <option value="+">--加--</option>
+        <option value="-">--减--</option>
+        <option value="*">--乘--</option>
+        <option value="/">--除--</option>
+    </select>
+    <input type="text" name="num2" value="" placeholder="请输入数字" required="required">
+    <input type="submit" value="计算">
+    <input type="text" name="" value="" placeholder="计算结果">
+</form>
+</body>
+</html>

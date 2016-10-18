@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h1>使用js创建dom元素</h1>
+<ul id="my_ul">
+    <li>苹果</li>
+    <li id="banner">香蕉</li>
+    <li>橘子</li>
+</ul>
+<script>
+    var li = document.createElement("li");
+    var text = document.createTextNode("梨子");
+var my_ul = document.getElementById("my_ul");
+    li.appendChild(text);
+    my_ul.appendChild(li);
+
+    //删除香蕉这个li标签
+    //1找到香蕉这个li标签
+    var banner = document.getElementById("banner");
+    //2 找到这个标签的父元素
+    var parent = banner.parentNode;
+    //3 通过父标签，使用removeChild删除子元素
+    parent.removeChild(banner);
+
+</script>
+</body>
+</html>

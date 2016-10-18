@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script type="text/javascript">
+    function sum( num ){
+        var sum =0;
+        for( var i =1; i <= num; i++){
+            sum += i;
+        }
+        return sum;
+    }
+    // 计算1-100之间的和
+    var sum = sum(100);
+    alert("1-100之间的和： " + sum); // 弹出窗口
+    document.write("1-100之间的和： " +  sum); // 直接输出
+    console.log("1-100之间的和： " +  sum); // 控制台输出
+</script>
+
+<script type="text/javascript">
+    document.write("<h2 align='center'>");
+    document.write("九九乘法表");
+    document.write("</h2>");
+    document.write("<table align='center' width='800px' border='1px'>");
+    for (var i = 1;i<=9;i++){
+        document.write("<tr>");
+        for(var j = 1;j <= i;j++){
+            document.write("<td>");
+            document.write(i + " * " + j + "=" + i * j);
+            document.write("</td>");
+        }
+        document.write("</tr>");
+    }
+
+    document.write("</table>");
+</script>
+
+<br>
+
+<script type="text/javascript">
+
+// 九九乘法表函数
+function jiujiuTable(){
+var html = "<table border='1px'>";
+    for( var i = 1; i<=9; i++){
+    html  += "<tr>" ;
+        for( var j = 1; j <= i; j++){
+        html  += "<td>";
+            html  +=  ( i + " * " + j + "=" + i * j  );
+            html  += "</td>";
+        }
+        html  += "</tr>";
+    }
+    html  += "</table>";
+return html;
+}
+
+// 调用函数
+var html = jiujiuTable();
+document.write(html);
+</script>
+
+</body>
+</html>

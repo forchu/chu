@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>计算工资</title>
+
+</head>
+<body>
+<form method="get" action="" name="form1">
+    <h2>按照工龄计算工资</h2>
+    <label id="label_salary">月工资：</label><input type="text" id="salary" name="salary" value="" placeholder="请输入月工资（单位：元）">
+    <label id="label_standing">工龄：</label><input type="text" id="standing" name="standing" value="" placeholder="请输入工龄（单位：年）">
+    <label id="label_result">计算结果：</label><input type="text" id="result" name="result" value="" placeholder="计算结果">
+    <button type="button" onclick="SalaryTable()">计算工资</button>
+    <a href="javascript:;" onclick="SalaryTable()">计算工资</a>
+</form>
+
+<script>
+    //创建构建运算函数SalaryTable()
+    function SalaryTable(){
+        var salary = document.getElementById("salary").value;  //获取两个输入框中的值
+        var standing = document.getElementById("standing").value;
+        var result = salary*Math.pow(1.1,standing); // 通过公式计算结果
+        console.log(result);
+        document.getElementById("result").value = result.toFixed(0);
+    }
+</script>
+</body>
+</html>
